@@ -19,6 +19,8 @@ public class AppDispensador {
         dispensador.mostrarNivel();
         dispensador.calentar(50);
         dispensador.servir(true, 0.8);
+        dispensador.enfriar(65);
+        dispensador.servir(true, 0.7);
         dispensador.vaciar();
         dispensador.mostrarNivel();
         dispensador.llenar();

@@ -51,6 +51,10 @@ public class DispensadorDeAgua {
         }
     }
 
+    public void enfriar(double grados) {
+        this.temperatura -= grados;
+    }
+
     public void mostrarNivel() {
         System.out.println("El dispensador tiene " + this.cantidadActual + " litros.");
     }
