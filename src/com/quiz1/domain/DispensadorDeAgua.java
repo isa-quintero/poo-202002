@@ -7,6 +7,17 @@ public class DispensadorDeAgua {
     public double cantidadActual;
     public double temperatura;
 
+    public DispensadorDeAgua(long serial) {
+        this.serial = serial;
+    }
+
+    public DispensadorDeAgua(long serial, String marca, double cantidadMaxima) {
+        this(serial);
+        this.marca = marca;
+        this.cantidadMaxima = cantidadMaxima;
+        this.cantidadActual = this.cantidadMaxima;
+    }
+
     public boolean servir(boolean caliente, double cantidadAServir) {
         if ((cantidadActual - cantidadAServir) >= 0) {
             cantidadActual -= cantidadAServir;
@@ -38,5 +49,9 @@ public class DispensadorDeAgua {
             this.temperatura += grados;
             return true;
         }
+    }
+
+    public void mostrarNivel() {
+        System.out.println("El dispensador tiene " + this.cantidadActual + " litros.");
     }
 }

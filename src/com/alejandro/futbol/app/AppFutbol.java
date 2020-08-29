@@ -8,21 +8,10 @@ import java.util.Arrays;
 
 public class AppFutbol {
     public static void main(String[] args) {
-        Jugador duque = new Jugador();
-        duque.nombre = "Jefferson Duque";
-        duque.posicion = "Delantero";
-
-        Jugador aristi = new Jugador();
-        aristi.nombre = "Victor Aristizabal";
-        aristi.posicion = "DELANTERO";
-
-        Jugador mac = new Jugador();
-        mac.nombre = "Macnelly Torres";
-        mac.posicion = "Creativo";
-
-        Jugador cardona = new Jugador();
-        mac.nombre = "Edwin Cardona";
-        mac.posicion = "Creativo";
+        Jugador duque = new Jugador("Jefferson Duque", "Delantero");
+        Jugador aristi = new Jugador("Victor Aristizabal", "DELANTERO");
+        Jugador mac = new Jugador("Macnelly Torres", "Volante 10");
+        Jugador cardona = new Jugador("Edwin Cardona", "Creativo");
 
         EquipoDeFutbol nacional = new EquipoDeFutbol();
         nacional.nombre = "Atl. Nacional";
