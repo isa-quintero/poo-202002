@@ -4,8 +4,6 @@ import com.universidad.Profesor;
 import com.universidad.Programa;
 import com.universidad.Universidad;
 
-import java.util.ArrayList;
-
 public class AppUCO {
     public static void main(String[] args) {
         Universidad uco = new Universidad();
@@ -13,15 +11,16 @@ public class AppUCO {
         Profesor alirio = new Profesor("Alirio");
         Profesor luzMery = new Profesor("Luz Mery Rios");
 
-        Programa ingenieriaDeSistemas = new Programa();
+        Programa ingenieriaDeSistemas = new Programa("Ing. de Sistemas");
+        System.out.println("El nombre del programa es " + ingenieriaDeSistemas.getNombre());
 
-        ingenieriaDeSistemas.profesores.add(alejandro);
-        ingenieriaDeSistemas.profesores.add(luzMery);
-        ingenieriaDeSistemas.profesores.add(alirio);
+        ingenieriaDeSistemas.getProfesores().add(alejandro);
+        ingenieriaDeSistemas.getProfesores().add(luzMery);
+        ingenieriaDeSistemas.getProfesores().add(alirio);
 
-        uco.programas.add(ingenieriaDeSistemas);
+        uco.getProgramas().add(ingenieriaDeSistemas);
 
-        uco.programas.get(0).profesores.forEach(profesor -> System.out.println(profesor.nombre));
+        uco.getProgramas().get(0).getProfesores().forEach(profesor -> System.out.println(profesor.getNombre()));
 
 //        for (Profesor profe: uco.programas.get(0).profesores) {
 //            System.out.println(profe.nombre);

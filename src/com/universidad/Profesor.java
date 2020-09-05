@@ -1,9 +1,13 @@
 package com.universidad;
 
 public class Profesor {
-    public String nombre;
+    private String nombre;
 
     public Profesor(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 }

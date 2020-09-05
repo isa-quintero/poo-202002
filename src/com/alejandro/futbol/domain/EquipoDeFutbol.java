@@ -1,13 +1,21 @@
 package com.alejandro.futbol.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EquipoDeFutbol {
-    public String nombre;
-    public String pais;
-    public short anioFundacion;
-    public short nroTitulos;
-    public List<Jugador> jugadores;
+    private String nombre;
+    private String pais;
+    private short anioFundacion;
+    private short nroTitulos;
+    private List<Jugador> jugadores;
+
+    public EquipoDeFutbol(String nombre, String pais, short anioFundacion) {
+        this.nombre = nombre;
+        this.pais = pais;
+        this.anioFundacion = anioFundacion;
+        this.jugadores = new ArrayList<>();
+    }
 
     public void entrenar(String lugar) {
         System.out.println(nombre + " está entrenando en " + lugar);
@@ -30,9 +38,41 @@ public class EquipoDeFutbol {
 
     public void mostrarDelanteros() {
         jugadores.forEach(jugador -> {
-            if (jugador.posicion.equalsIgnoreCase("Delantero")) {
-                System.out.println(jugador.nombre);
+            if (jugador.getPosicion().equalsIgnoreCase("Delantero")) {
+                System.out.println(jugador.getNombre());
             }
         });
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public short getAnioFundacion() {
+        return anioFundacion;
+    }
+
+    public short getNroTitulos() {
+        return nroTitulos;
+    }
+
+    public List<Jugador> getJugadores() {
+        return jugadores;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setNroTitulos(short nroTitulos) {
+        this.nroTitulos = nroTitulos;
+    }
+
+    public void setJugadores(List<Jugador> jugadores) {
+        this.jugadores = jugadores;
     }
 }

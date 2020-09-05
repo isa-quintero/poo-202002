@@ -8,27 +8,25 @@ import java.util.Arrays;
 
 public class AppFutbol {
     public static void main(String[] args) {
-        Jugador duque = new Jugador("Jefferson Duque", "Delantero");
-        Jugador aristi = new Jugador("Victor Aristizabal", "DELANTERO");
-        Jugador mac = new Jugador("Macnelly Torres", "Volante 10");
-        Jugador cardona = new Jugador("Edwin Cardona", "Creativo");
+        Jugador duque = new Jugador("Jefferson Duque", (byte) 33, "Delantero");
+        Jugador aristi = new Jugador("Victor Aristizabal", (byte) 45, "DELANTERO");
+        Jugador mac = new Jugador("Macnelly Torres", (byte) 34, "Volante 10");
+        Jugador cardona = new Jugador("Edwin Cardona", (byte) 26, "Creativo");
 
-        EquipoDeFutbol nacional = new EquipoDeFutbol();
-        nacional.nombre = "Atl. Nacional";
-        nacional.jugadores = new ArrayList<>(Arrays.asList(duque, mac, aristi));
+        EquipoDeFutbol nacional = new EquipoDeFutbol("Atl. Nacional", "Colombia", (short) 1950);
 
-        EquipoDeFutbol boca = new EquipoDeFutbol();
-        boca.nombre = "Boca Juniors";
-        boca.jugadores = new ArrayList<>();
+        nacional.getJugadores().addAll(Arrays.asList(duque, mac, aristi));
+
+        EquipoDeFutbol boca = new EquipoDeFutbol("Boca Juniors", "Argentina", (short) 1918);
 
         nacional.entrenar("Guarne");
         boca.jugarPartido("Miami", nacional);
 
-        System.out.println("Boca antes de comprar: " + boca.jugadores.size());
+        System.out.println("Boca antes de comprar: " + boca.getJugadores().size());
         boca.comprarJugador(cardona, 5000000);
         nacional.venderJugador(duque, 8000000, boca);
 
-        System.out.println("Boca después de comprar: " + boca.jugadores.size());
+        System.out.println("Boca después de comprar: " + boca.getJugadores().size());
 
         nacional.mostrarDelanteros();
     }
