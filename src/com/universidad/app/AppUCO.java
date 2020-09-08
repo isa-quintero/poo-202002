@@ -11,6 +11,22 @@ public class AppUCO {
         Profesor alirio = new Profesor("Alirio");
         Profesor luzMery = new Profesor("Luz Mery Rios");
 
+        System.out.println("--- Estamos viendo el manejo de memoria en Java");
+        alejandro.setEdad(28);
+        luzMery = alejandro;
+
+        System.out.println("Edad antes de cambiarla desde luzMery " + luzMery.getEdad());
+
+        luzMery.setEdad(35);
+
+        System.out.println(alejandro.getNombre());
+        System.out.println(luzMery.getNombre());
+        System.out.println(alejandro.getEdad());
+        System.out.println(luzMery.getEdad());
+
+        System.out.println("--- Vimos el manejo de memoria en Java\n");
+
+
         Programa ingenieriaDeSistemas = new Programa("Ing. de Sistemas");
         System.out.println("El nombre del programa es " + ingenieriaDeSistemas.getNombre());
 
