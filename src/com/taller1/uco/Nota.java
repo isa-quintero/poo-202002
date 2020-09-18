@@ -3,6 +3,10 @@ package com.taller1.uco;
 import java.util.ArrayList;
 
 public class Nota {
+    private static final double PORC_SEGUIMIENTO = 0.4;
+    private static final double PORC_FINAL = 0.3;
+    private static final double PORC_PARCIAL = 0.3;
+
     private double notaParcial;
     private double notaFinal;
     private ArrayList<Double> notasSeguimiento;
@@ -21,7 +25,7 @@ public class Nota {
     }
 
     public double calcularDefinitiva() {
-        return (notaParcial * 0.3) + (notaFinal * 0.3) + (calcularSeguimiento() * 0.4);
+        return (notaParcial * Nota.PORC_PARCIAL) + (notaFinal * Nota.PORC_FINAL) + (calcularSeguimiento() * PORC_SEGUIMIENTO);
     }
 
     public double getNotaParcial() {
