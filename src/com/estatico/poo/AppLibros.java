@@ -7,15 +7,19 @@ import java.util.stream.Collectors;
 public class AppLibros {
     public static void main(String[] args) {
         ArrayList<Libro> libros = new ArrayList<>();
-        Libro diasSinTi = new Libro("Días sin ti");
-        Libro cienAnos = new Libro("Cien años de soledad");
-        Libro hambriento = new Libro("Hambriento");
-        Libro hambriento2 = new Libro("Hambriento 2");
+        Libro diasSinTi = Libro.crearLibro("Dias sin ti");
+        Libro cienAnos = Libro.crearLibro("Cien años de soledad");
+        Libro hambriento = Libro.crearLibro("Hambriento");
+        Libro hambriento2 = Libro.crearLibro("Hambriento 2");
+
+        System.out.println(diasSinTi);
+        System.out.println(cienAnos);
+        System.out.println(hambriento);
+        System.out.println(hambriento2);
 
         libros.add(diasSinTi);
         libros.add(cienAnos);
         libros.add(hambriento);
-        libros.add(hambriento2);
 
         libros.forEach(librito -> {
             System.out.println(librito.getTitulo());

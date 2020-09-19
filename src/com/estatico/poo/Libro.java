@@ -8,17 +8,20 @@ public class Libro {
     private String autor;
     private short nroPaginas;
 
-    public Libro(String titulo) {
+    private Libro(String titulo) {
+        this.titulo = titulo;
+        this.serial = nroLibrosCreados + 1;
 
-        if (Libro.getNroLibrosCreados() < 5) {
-            this.titulo = titulo;
-            this.serial = nroLibrosCreados + 1;
+        Libro.nroLibrosCreados++;
+    }
 
-            Libro.nroLibrosCreados++;
+    public static Libro crearLibro(String titulo) {
+        if (nroLibrosCreados < 3) {
+            return new Libro(titulo);
         } else {
             System.out.println("No se pueden crear mas de tres libros");
+            return null;
         }
-
     }
 
     public static int getNroLibrosCreados() {
