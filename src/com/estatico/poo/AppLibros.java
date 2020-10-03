@@ -12,32 +12,32 @@ public class AppLibros {
         Libro hambriento = Libro.crearLibro("Hambriento");
         Libro hambriento2 = Libro.crearLibro("Hambriento 2");
 
-        System.out.println(diasSinTi);
-        System.out.println(cienAnos);
-        System.out.println(hambriento);
-        System.out.println(hambriento2);
+        System.out.println("diasSinTi=" + diasSinTi);
+        System.out.println("cienAnos=" + cienAnos);
+        System.out.println("hambriento=" + hambriento);
+        System.out.println("hambriento2=" + hambriento2);
 
-        libros.add(diasSinTi);
-        libros.add(cienAnos);
-        libros.add(hambriento);
-
-        libros.forEach(librito -> {
-            System.out.println(librito.getTitulo());
-        });
-
-        List<Libro> librosHamb = libros.stream().filter(libro -> {
-            return libro.getTitulo().contains("Hambriento");
-        }).collect(Collectors.toList());
-        System.out.println("Despues de filtrar");
-        librosHamb.forEach(librito -> {
-            System.out.println(librito.getTitulo());
-        });
-
-        System.out.println(hambriento2);
-
-        System.out.println(cienAnos.getSerial());
-
-        System.out.println("He creado " + Libro.getNroLibrosCreados());
+//        libros.add(diasSinTi);
+//        libros.add(cienAnos);
+//        libros.add(hambriento);
+//
+//        libros.forEach(librito -> {
+//            System.out.println(librito.getTitulo());
+//        });
+//
+//        List<Libro> librosHamb = libros.stream().filter(libro -> {
+//            return libro.getTitulo().contains("Hambriento");
+//        }).collect(Collectors.toList());
+//        System.out.println("Despues de filtrar");
+//        librosHamb.forEach(librito -> {
+//            System.out.println(librito.getTitulo());
+//        });
+//
+//        System.out.println(hambriento2);
+//
+//        System.out.println(cienAnos.getSerial());
+//
+//        System.out.println("He creado " + Libro.getNroLibrosCreados());
     }
 
 }
