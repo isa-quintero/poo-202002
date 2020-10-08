@@ -5,9 +5,7 @@ import com.alejandro.domain.Persona;
 
 public class App {
     public static void main(String[] args) {
-        Persona alejandro = new Persona();
-
-        alejandro.nombre = "Alejandro Ramírez";
+        Persona alejandro = new Persona("Alejandro Ramírez");
 
         CuentaBancaria cuentaDeAlejo = new CuentaBancaria();
         CuentaBancaria otraCuenta = new CuentaBancaria();
@@ -21,7 +19,7 @@ public class App {
         otraCuenta.propietario = alejandro;
 
         System.out.println("El propietario de la cuenta " + cuentaDeAlejo.numero + " es "
-                            + cuentaDeAlejo.propietario.nombre);
+                            + cuentaDeAlejo.propietario.getNombre());
 
         System.out.println("El saldo antes de consignar es " + cuentaDeAlejo.saldo);
         cuentaDeAlejo.consignar(300000);
