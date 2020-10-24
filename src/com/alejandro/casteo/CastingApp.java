@@ -1,9 +1,6 @@
 package com.alejandro.casteo;
 
 import com.alejandro.domain.Persona;
-import com.estatico.poo.Calculadora;
-import com.taller1.uco.Asignatura;
-import com.taller1.uco.Nota;
 
 public class CastingApp {
     public static void main(String[] args) {
