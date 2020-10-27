@@ -1,18 +1,30 @@
 package com.alejandro.herencia;
 
-public class Vehiculo {
+public abstract class Vehiculo {
     private String matricula;
     private String marca;
     private String modelo;
     private short anoModelo;
     private String color;
 
-    public void acelerar() {
-        System.out.println("El vehiculo aceleró");
+    public Vehiculo(String marca, String modelo, short anoModelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anoModelo = anoModelo;
     }
+
+    public abstract void acelerar();
 
     public void frenar() {
         System.out.println("El vehiculo frenó");
+    }
+
+    @Override
+    public String toString() {
+        return "Vehiculo {" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                '}';
     }
 
     public String getMatricula() {

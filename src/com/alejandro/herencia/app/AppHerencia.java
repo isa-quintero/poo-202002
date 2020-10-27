@@ -9,10 +9,10 @@ public class AppHerencia {
     public static void main(String[] args) {
         List<Vehiculo> vehiculos = new ArrayList<>();
 
-        Taxi taxi = new Taxi();
-        Bicicleta bici = new Bicicleta();
-        BicicletaMontana mtb = new BicicletaMontana();
-        BicicletaRuta rutera = new BicicletaRuta();
+        Vehiculo taxi = new Taxi("Kia", "Picanto", (short) 2020);
+        Vehiculo bici = new BicicletaMontana("GW", "Hyena", (short) 2019, "DISCO", "AIRE");
+        Vehiculo mtb = new BicicletaMontana("Trek", "Marlin 7", (short) 2020, "DISCO", "HIDRAULICA");
+        Vehiculo rutera = new BicicletaRuta("Pinarello", "Tour", (short) 2020);
 
         vehiculos.add(taxi);
         vehiculos.add(bici);
@@ -21,15 +21,21 @@ public class AppHerencia {
 
         taxi.setColor("Blanco");
 
-        mostrarVehiculos(vehiculos);
+        acelerarVehiculos(vehiculos);
+    }
+
+    private static void acelerarVehiculos(List<Vehiculo> vehiculos) {
+        vehiculos.forEach(vehiculo -> {
+            vehiculo.acelerar();
+        });
     }
 
     private static void mostrarVehiculos(List<Vehiculo> vehiculos) {
         vehiculos.forEach(vehiculo -> {
             if (vehiculo instanceof Taxi) {
-                System.out.println(vehiculo + " - es taxi.");
+                System.out.println(vehiculo.toString() + " - es taxi.");
             } else if (vehiculo instanceof BicicletaMontana) {
-                System.out.println(vehiculo + " - es bicicleta de montaña");
+                System.out.println(vehiculo.toString() + " - es bicicleta de montaña");
             }
         });
     }

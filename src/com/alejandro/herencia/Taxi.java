@@ -5,6 +5,15 @@ public class Taxi extends Vehiculo {
     private String empresa;
     private byte nroPasajeros;
 
+    public Taxi(String marca, String modelo, short anoModelo) {
+        super(marca, modelo, anoModelo);
+    }
+
+    @Override
+    public void acelerar() {
+        System.out.println("El Taxi aceleró");
+    }
+
     public String getRegistroCirculacion() {
         return registroCirculacion;
     }

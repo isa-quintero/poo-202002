@@ -1,9 +1,14 @@
 package com.alejandro.herencia;
 
-public class Bicicleta extends Vehiculo {
+public abstract class Bicicleta extends Vehiculo {
     private byte nroPinones;
     private double tamanoRueda;
     private String tipoFreno;
+
+    public Bicicleta(String marca, String modelo, short anoModelo, String tipoFreno) {
+        super(marca, modelo, anoModelo);
+        this.tipoFreno = tipoFreno;
+    }
 
     public byte getNroPinones() {
         return nroPinones;
