@@ -1,15 +1,31 @@
 package com.alejandro.joptionpane;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class AppIcono {
     public static void main(String[] args) {
-        Icon icon = new ImageIcon(AppIcono.class.getResource("logo.png"));
+        ImageIcon icon = new ImageIcon(AppIcono.class.getResource("logo.png"));
+        List<String> lista = Arrays.asList("Alejo", "Anderson", "Yuber", "John");
 
-        String resultado = (String) JOptionPane.showInputDialog(null, "¿Cómo queda colombia hoy?",
-                "Eliminatorias Qatar", JOptionPane.INFORMATION_MESSAGE, icon, null, null);
+//        lista.stream()
+//                .takeWhile(s -> s.contains("Y"))
+//                .forEach(n -> System.out.println(n));
 
-        JOptionPane.showMessageDialog(null, "Tu resultado es: " + resultado, "Eliminatorias Qatar",
-                JOptionPane.INFORMATION_MESSAGE, icon);
+        try {
+            lista.forEach(nombre -> {
+                if(nombre.contains("o") == false) {
+                    throw new RuntimeException(nombre + " no tiene la letra o");
+                }
+
+                System.out.println(nombre);
+            });
+        }
+        catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
